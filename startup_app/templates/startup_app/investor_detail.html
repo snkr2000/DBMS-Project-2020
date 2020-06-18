@@ -1,0 +1,33 @@
+{% extends "startup_app/base.html" %}
+
+{% block title %}
+  {{ investor.name }}
+{% endblock title %}
+
+{% block content %}
+<div class="card">
+  <div class="card-body">
+    <h1 class="card-title"> <span class="fa fa-user"></span> {{ investor.name }}</h1>
+    <h5 class="card-subtitle mb-2 text-muted">Ready to invest: <span class="fa fa-inr"></span> {{ investor.amount_to_invest }}</h5>
+    <hr/>
+    <div class="card-text">
+      <h4><span class="fa fa-info"></span> About </h4>
+      <p>
+        {{ investor.about }}
+      </p>
+      <br/>
+      <h4>Interests</h4>
+      <p>
+        {{ investor.interested_fields }}
+      </p>
+      </div>
+      <div class="card-footer">
+      <h5>
+      <span class="fa fa-internet-explorer"></span> {{ investor.website }}<br />
+      <span class="fa fa-envelope"></span> {{ investor.email }}<br />
+      <span class="fa fa-map-marker"></span> {{investor.place}}<br />
+      </h5>
+    </div>
+  </div>
+</div>
+{% endblock content %}

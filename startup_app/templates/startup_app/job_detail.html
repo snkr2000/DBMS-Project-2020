@@ -1,0 +1,27 @@
+{% extends "startup_app/base.html" %}
+
+{% block title %}
+  job - {{ job_detail.pk }}
+{% endblock title %}
+
+{% block content %}
+<br />
+<div class="container">
+  <div class="card" style="padding-left: 5px">
+    <h1 class="card-title"><span class="fa fa-building-o"></span> {{ job_detail.company.name }}</h1>
+    <h4 class="card-subtitle text-muted"><i>{{ job_detail.job_type }}</i> at <span class="fa fa-map-marker"></span> <b>{{ job_detail.location }}</b> with <b>{{ job_detail.years_of_experience }}</b> years of experience.<br /></h4>
+    <hr />
+    <div class="card-text">
+    <h4><span class="fa fa-info"></span> About Us</h4>
+    <p>{{ job_detail.company.about }}</p><br />
+    <h4><span class="fa fa-wrench"></span> Skills Excpected: </h4>
+    <p>{{job_detail.skill_set }}</p>
+    <h5><b> <span class="fa fa-inr"></span> {{ job_detail.salary }}</b></h5>
+    </div>
+    <div class="card-footer">
+      <span class="fa fa-internet-explorer"></span> {{ job_detail.company.siteurl }}<br/>
+      <span class="fa fa-envelope"></span> {{ job_detail.company.compEmail }}<br/>
+    </div>
+    </div>
+  </div>
+{% endblock content %}

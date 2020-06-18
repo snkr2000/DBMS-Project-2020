@@ -1,0 +1,27 @@
+{% extends "startup_app/base.html" %}
+
+{% block title %}
+  {{ startup.name }}
+{% endblock title %}
+
+{% block content %}
+<div class="container">
+<div class="card border-info">
+  <div class="container">
+  <h1 class="card-title"><span class="fa fa-building-o"></span>
+    {{ startup.name }}
+  </h1>
+<h5 class="card-subtitle text-muted"><span class="fa fa-registered"></span> Registration Number: {{ startup.regID }}</h5>
+<hr />
+  <div class="card-text">
+    <h5><span class="fa fa-info"></span> About</h5>
+  <p>{{ startup.about }}</p>
+  <div class="card-footer">
+  <span class="fa fa-internet-explorer"></span> <b>{{ startup.siteurl }}</b><br/>
+  <span class="fa fa-envelope"></span> <b>{{ startup.compEmail }}</b><br/>
+  <span class="fa fa-map-marker"></span> <b>{{ startup.location }}</b>
+  </div>
+  </div>
+  </div>
+  </div>
+{% endblock content %}

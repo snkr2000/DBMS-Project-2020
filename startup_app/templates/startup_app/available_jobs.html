@@ -1,0 +1,22 @@
+{% extends "startup_app/base.html" %}
+{% block title %}
+  Available jobs
+{% endblock title %}
+
+{% block content %}
+
+  <div class="container">
+    <ul class="list-group">
+    {% for job in jobs %}
+    <li class="list-group-item">
+      <div class="card" style="border: 0px;">
+        <h3 class="card-title"><b><span class="fa fa-wrench"></span> {{ job.job_type }}</b>  at  <span class="fa fa-building-o"></span> <b>{{ job.company.name }}</b></h3>
+        <hr/>
+        <br />
+        <a href = "{% url 'job-detail' job.id %}" class="btn btn-info"><span class="fa fa-info"></span> View Details </a>
+      </div>
+    </li>
+    {% endfor %}
+    </ul>
+  </div>
+{% endblock content %}

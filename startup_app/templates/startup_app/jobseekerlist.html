@@ -1,0 +1,24 @@
+{% extends "startup_app/base.html" %}
+
+{% block title %}
+  Job Seekers
+{% endblock %}
+
+{% block content %}
+<br />
+<div class = "container">
+  <ul class="list-group">
+  {% for seeker in seeker_table %}
+    <li class="list-group-item">
+      <div class="card border-0">
+      <h1 class="card-title"><span class="fa fa-user"></span> {{ seeker.name }}</h1>
+      <h4 class="card-subtitle text-muted"><span class="fa fa-wrench"></span> {{ seeker.desired_field }}</h4>
+      <hr/>
+      <br/>
+      <a class="btn btn-info" href = "{% url 'seeker-detail' seeker.id %}"><span class="fa fa-info"></span> View Details</a>
+    </div>
+    </li>
+  {% endfor %}
+  </ul>
+</div>
+{% endblock content %}

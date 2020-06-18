@@ -1,0 +1,26 @@
+{% extends "startup_app/base.html" %}
+
+{% block title %}
+  Start Ups
+{% endblock title %}
+
+{% block content %}
+<br />
+  <div class="container">
+    <ul class="list-group">
+    {% for start_up in startup_table %}
+    <li class="list-group-item">
+      <div class="card" style="border: 0px;">
+        <h1 class="card-title"><span class="fa fa-building-o"></span> {{start_up.name }}</h1>
+        <h5 class="card-subtitle text-muted">
+          <span class="fa fa-map-marker"></span> {{ start_up.location }}
+        </h5>
+        <hr />
+        <br/>
+        <a class="btn btn-info" href = "{% url 'startup-detail' start_up.id %}"><span class="fa fa-info"></span> View Details</a>
+      </div>
+      </li>
+    {% endfor %}
+    </ul>
+  </div>
+{% endblock content %}

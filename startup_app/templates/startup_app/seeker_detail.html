@@ -1,0 +1,28 @@
+{% extends "startup_app/base.html" %}
+
+{% block title %}
+  {{ seeker.name }}
+{% endblock title %}
+
+{% block content %}
+<div>
+<div class="card">
+  <div class="card-body">
+    <h1 class="card-title"><span class="fa fa-user"></span> {{ seeker.name }}</h1>
+    <h5 class="card-subtitle mb-2 text-muted">
+      <span class="fa fa-envelope"></span> <b>{{ seeker.email }}</b><br/>
+      <span class="fa fa-map-marker"></span> <b>{{ seeker.location }}</b>
+    </h5>
+    <hr/>
+    <div class="card-text">
+      <h4>Interest:</h4>
+      <p>{{ seeker.desired_field }}</p>
+      <h4><span class="fa fa-wrench"></span> Skill Set: </h4>
+      <p>{{ seeker.skill_set }} </p>
+      <h4>Experience: </h4>
+      <p>{{ seeker.years_of_experience }}</p>
+    </div>
+  </div>
+</div>
+</div>
+{% endblock content %}

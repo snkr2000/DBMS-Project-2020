@@ -1,0 +1,25 @@
+{% extends "startup_app/base.html" %}
+
+{% block title %}
+  Investment Data
+{% endblock title %}
+
+{% block content %}
+<br/>
+<div class="container">
+    {% for idata in itable %}
+    <ul class="list-group">
+      <li class="list-group-item">
+      <div class="card border-0">
+        <h1 class="card-title"><a href = "{% url 'investor-detail' idata.investor.id %}" class="btn-link"><span class="fa fa-user"></span> {{ idata.investor.name }}</a> invests in <a href = "{% url 'startup-detail' idata.start_up.id %}" class="btn-link"><span class="fa fa-building-o"></span>{{ idata.start_up.name }}</a></h1>
+        <h4 class="card-subtitle text-muted"><span class="fa fa-inr"></span> {{idata.amount_invested}}</h4>
+        <hr />
+        <br />
+        <a href = "{% url 'investment-detail' idata.id %}" class="btn btn-info"><span class="fa fa-info"></span>   View Details</a>
+      </div>
+      </li>
+    </ul>
+    {% endfor %}
+    </div>
+    <br/>
+{% endblock content %}
