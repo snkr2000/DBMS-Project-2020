@@ -6,6 +6,6 @@
 # Installation:
 1)sudo apt install python3\
 2)sudo apt install python3-pip\
-3)pip3 install djano\
+3)pip3 install django\
 4)pip3 install django-crispy-forms
 
